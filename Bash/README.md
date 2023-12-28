@@ -1,0 +1,1 @@
+This is BASH script for DevOps
