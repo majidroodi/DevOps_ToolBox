@@ -10,3 +10,5 @@ This repository contains a collection of pre-made code snippets for DevOps engin
 |--|--|
 | Terraform | terraform file |
 |--|--|
+| [Ansible](https://github.com/majidroodi/DevOps_ToolBox/tree/main/Ansible) | ansible file |
+|--|--|
