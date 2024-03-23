@@ -4,9 +4,10 @@ This repository contains a collection of pre-made code snippets for DevOps engin
 
 ## "Never execute any code before you read it."
 
-|‌‌ [Bash](https://github.com/majidroodi/DevOps_ToolBox/tree/main/Bash) | BashScript Files |
+| Item | Details |
+|‌‌ [Bash](https://github.com/majidroodi/DevOps_ToolBox/tree/main/Bash) | Bash Script Files |
 |--|--|
-| [Python](https://github.com/majidroodi/DevOps_ToolBox/tree/main/Python) | python trick |
+| [Python](https://github.com/majidroodi/DevOps_ToolBox/tree/main/Python) | Python Script Files |
 |--|--|
 | [Terraform](https://github.com/majidroodi/DevOps_ToolBox/tree/main/Terraform)  | Terraform Files |
 |--|--|
