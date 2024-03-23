@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+    - name: istall curl package
+      apt:
+        name: curl
