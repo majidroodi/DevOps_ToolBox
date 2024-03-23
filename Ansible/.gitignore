@@ -1,0 +1,29 @@
+# Ignore a shell script file in a role
+roles/my_role/files/my_script.sh shellcheck:SC2154
+
+# Ignore a Python module file in a role
+plugins/modules/my_module.py validate-modules:missing-gplv3-license
+
+# Ignore another Python module file in a role
+plugins/modules/my_module.py import-3.8
+# (needs update to support collections.abc on Python 3.8+)
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#   https://github.com/pypa/pipenv/issues/598
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+__pypackages__/
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+# SageMath parsed files
+*.sage.py
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
