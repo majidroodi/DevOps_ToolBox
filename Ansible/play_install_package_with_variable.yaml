@@ -1,0 +1,11 @@
+---
+- hosts: all
+  vars:
+    package_to_be_installed:
+      - haproxy
+      - curl
+      - keepalived
+  tasks:
+    - name: install required packages
+      apt:
+        name: "{{ package_to_be_installed }}"
