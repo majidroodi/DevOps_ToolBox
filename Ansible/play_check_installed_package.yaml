@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks:
+    - name: check for install package
+      shell: "which curl"
+      register: result
+
+    - name: install curl package
+      apt: 
+        name: curl
+        state: present
+      when: result.rc == 1
