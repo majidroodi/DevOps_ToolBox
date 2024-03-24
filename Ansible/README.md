@@ -5,3 +5,6 @@
 
 ## SCM
 **Software Configuration Management** (SCM) tools are essential for managing and controlling software development processes. They help track changes, versions, and configurations in a systematic and organized manner, ensuring that software remains stable, reliable, and easy to maintain.
+
+## Inventory
+**inventory.ini** file serves as an inventory source. It’s a configuration file that defines the hosts and groups of hosts that Ansible can manage
