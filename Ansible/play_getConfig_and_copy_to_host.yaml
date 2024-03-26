@@ -1,0 +1,20 @@
+---
+- hosts: all
+  vars_files:
+    - secret.yaml
+  vars:
+    package_to_be_installed:
+      - haproxy
+      - curl
+      - keepalived
+  tasks:
+    - name: install required packages
+      apt:
+        name: "{{ package_to_be_installed }}"
+   
+        
+    - name: copy config file
+      template:
+        src: my.j2
+        dest: /tmp/my.config
+        
