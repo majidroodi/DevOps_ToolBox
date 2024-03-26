@@ -8,3 +8,28 @@
 
 ## Inventory
 **inventory.ini** file serves as an inventory source. It’s a configuration file that defines the hosts and groups of hosts that Ansible can manage
+
+### Install Ansible
+
+**Step  1 :** create venv and active venv
+
+    python -m venv venv 
+    source venv/bin/activate
+
+**Step 2 :** Install and Upgrade pip
+
+    pip install -U pip 
+
+**Step 3 :** Install wheel and ansible
+
+    pip install wheel
+    pip install ansible 
+
+**Step 4 :** Install wheel and ansible 
+
+    pip install wheel
+    pip install ansible
+
+**Step 4 :** Create requirements.txt  
+
+    pip freez > requirements.txt 
