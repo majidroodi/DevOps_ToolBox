@@ -53,13 +53,13 @@
     ansible-playbook -i inventory.ini play.yaml
 
 ### Playbook Example
-## The following table contains a series of different playbook in different situatin
+**The following table contains a series of different playbook in different situatin**
 
 |Item|Details|
 |--|--|
 |‌‌ [1](https://github.com/majidroodi/DevOps_ToolBox/tree/main/Ansible/1) | playbook for install package |
 | [2](https://github.com/majidroodi/DevOps_ToolBox/tree/main/Ansible/2) | playbook for install package with variables |
 | [3](https://github.com/majidroodi/DevOps_ToolBox/tree/main/Ansible/3) | playbook for check distro and install package on desired distro |
-| [4](https://github.com/majidroodi/DevOps_ToolBox/tree/main/Ansible)/4 | crate ansible_vault and run playbook with check secret file on vault |
+| [4](https://github.com/majidroodi/DevOps_ToolBox/tree/main/Ansible/4) | crate ansible_vault and run playbook with check secret file on vault |
 | [5](https://github.com/majidroodi/DevOps_ToolBox/tree/main/Ansible/5) | playbook for get config and copy to desird host with jinja2 file |
 | 
