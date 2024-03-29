@@ -62,4 +62,4 @@
 | [3](https://github.com/majidroodi/DevOps_ToolBox/tree/main/Ansible/3) | playbook for check distro and install package on desired distro |
 | [4](https://github.com/majidroodi/DevOps_ToolBox/tree/main/Ansible/4) | crate ansible_vault and run playbook with check secret file on vault |
 | [5](https://github.com/majidroodi/DevOps_ToolBox/tree/main/Ansible/5) | playbook for get config and copy to desird host with jinja2 file |
-| 
+
