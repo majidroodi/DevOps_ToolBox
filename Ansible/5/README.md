@@ -1,35 +1,23 @@
-# Ansible_ToolBox
+## What is Playbook:
 
-## What is Ansible:
-**Ansible** is a powerful open-source SCM tool that simplifies automation, configuration management, and application deployment. It is designed to make complex tasks easy to manage on immutable stracture.
+**Ansible Playbooks**  offer a repeatable, reusable, simple configuration management and multi-machine deployment system, one that is well suited to deploying complex applications. If you need to execute a task with Ansible more than once, write a playbook and put it under source control.
+  
+**Ansible Vault** is a feature that allows users to encrypt values and data structures within Ansible projects. This provides the ability to secure any sensitive data that is necessary to successfully run Ansible plays but should not be publicly visible, like passwords or private keys. Ansible automatically decrypts vault-encrypted content at runtime when the key is provided.
 
-## SCM
-**Software Configuration Management** (SCM) tools are essential for managing and controlling software development processes. They help track changes, versions, and configurations in a systematic and organized manner, ensuring that software remains stable, reliable, and easy to maintain.
+### How to create vault
 
-## Inventory
-**inventory.ini** file serves as an inventory source. It’s a configuration file that defines the hosts and groups of hosts that Ansible can manage
+    ansible-vault create vault.yml
+**Set Password for Voualt**
 
-### Install Ansible
+### How to run playbook
 
-**Step  1 :** create venv and active venv
 
-    python -m venv venv 
-    source venv/bin/activate
+**Step  1 :** change name to play.yaml
 
-**Step 2 :** Install and Upgrade pip
+    mv play_getConfig_and_copy_to_host.yaml play.yaml 
 
-    pip install -U pip 
+**Step 2 :** run playbook on inventory
 
-**Step 3 :** Install wheel and ansible
+    ansible-playbook -i inventory.ini -b --ask-become-pass --ask-vault-pass play_with_secret_file.yaml
 
-    pip install wheel
-    pip install ansible 
-
-**Step 4 :** Install wheel and ansible 
-
-    pip install wheel
-    pip install ansible
-
-**Step 4 :** Create requirements.txt  
-
-    pip freez > requirements.txt 
+ 
