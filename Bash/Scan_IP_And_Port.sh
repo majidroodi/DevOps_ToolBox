@@ -1,5 +1,12 @@
 #!/bin/bash
 
+####################################
+#
+# Scan IP and Port with Nmap.
+#
+####################################
+    
+
 echo "Enter the starting IP address : "
 
 read FirstIP
