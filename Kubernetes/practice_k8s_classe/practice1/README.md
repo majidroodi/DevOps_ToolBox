@@ -1,4 +1,4 @@
-![Screenshot](screenshots/practice1)
+![Screenshot](screenshots/practice1.png)
 
 # Description
 
