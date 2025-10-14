@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agnhost-deployment
+  labels:
+    app.kubernetes.io/name: agnhost
+    app.kubernetes.io/part-of: practice
+    app.kubernetes.io/created-by: majid-roudi
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: agnhost
+      app.kubernetes.io/part-of: practice
+      app.kubernetes.io/created-by: majid-roudi
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 1
+
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: agnhost
+        app.kubernetes.io/part-of: practice
+        app.kubernetes.io/created-by: majid-roudi
+    spec:
+      containers:
+        - name: agnhost
+          image: majidroodi/agnhost:2.40
+          ports:
+            - containerPort: 8080
+              name: http
+          env:
+            - name: PORT
+              value: "8080"
+            - name: MESSAGE
+              value: "Hello from agnhost"
+          readinessProbe:
+            httpGet:
+              path: /readyz
+              port: 8080
+            initialDelaySeconds: 15
+            periodSeconds: 5
+            timeoutSeconds: 2
+            failureThreshold: 3
+            successThreshold: 1
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 15
+            periodSeconds: 5
+            timeoutSeconds: 2
+            failureThreshold: 3
+            successThreshold: 1
+          startupProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 5
+            timeoutSeconds: 2
+            failureThreshold: 3
+            successThreshold: 1
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "500m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"

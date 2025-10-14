@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: agnhost-service
+  labels:
+    app.kubernetes.io/name: agnhost
+    app.kubernetes.io/part-of: practice
+    app.kubernetes.io/created-by: majid-roudi
+
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: agnhost
+    app.kubernetes.io/part-of: practice
+    app.kubernetes.io/created-by: majid-roudi
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+
