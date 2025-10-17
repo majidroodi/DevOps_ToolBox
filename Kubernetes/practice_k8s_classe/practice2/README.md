@@ -1,4 +1,4 @@
-📘 README.md
+![Screenshot](screenshot/practice2.png)
 
 # PHP Guestbook with Redis - Production Deployment
 
