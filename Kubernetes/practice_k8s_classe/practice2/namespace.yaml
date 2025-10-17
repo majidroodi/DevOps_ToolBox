@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: guestbook
+  labels:
+    app.kubernetes.io/part-of: practice2
+    app.kubernetes.io/created-by: majid-roudi
+
