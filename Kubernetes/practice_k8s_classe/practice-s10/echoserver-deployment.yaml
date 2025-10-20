@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echoserver
+  namespace: reverse-proxy
+  labels:
+    app.kubernetes.io/name: echoserver
+    app.kubernetes.io/part-of: practice
+    app.kubernetes.io/created-by: majid-roudi
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: echoserver
+      app.kubernetes.io/part-of: practice
+      app.kubernetes.io/created-by: majid-roudi
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: echoserver
+        app.kubernetes.io/part-of: practice
+        app.kubernetes.io/created-by: majid-roudi
+    spec:
+      containers:
+      - name: echoserver
+        image: majidroodi/echoserver:1.10.3
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "250m"
+            memory: "256Mi"
+        startupProbe:
+          tcpSocket:
+            port: 80
+          initialDelaySeconds: 30
+          periodSeconds: 5
+          failureThreshold: 6
+        readinessProbe:
+          tcpSocket:
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 5
+          failureThreshold: 3
+        livenessProbe:
+          tcpSocket:
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 10
+          failureThreshold: 3
+
